@@ -6,7 +6,7 @@ import ScoreBox from './ScoreBox';
 import { Grid } from 'semantic-ui-react'
 import GameOverModal from './GameOverModal';
 import LeaderBoard from './LeaderBoard'
-
+import {api_base,dictionary_url} from '../apiUri.js'
 
 export default class GameContainer extends Component {
     constructor(props) {
@@ -55,7 +55,7 @@ export default class GameContainer extends Component {
     }
 
     updateLeaders = (e) => {
-      fetch('http://localhost:3000/leaders')
+      fetch(api_base + '/leaders')
       .then(res => res.json())
       .then(data => {
           this.setState({leaders: data})
@@ -95,7 +95,7 @@ export default class GameContainer extends Component {
 
 
     getWord= ()=>{
-      fetch("http://api.urbandictionary.com/v0/random")
+      fetch(dictionary_url)
       .then(resp =>{
         if(!resp.ok){
           alert("Problem getting new word")
@@ -135,7 +135,7 @@ export default class GameContainer extends Component {
 
   componentDidMount(){
     const token = localStorage.getItem("token")
-    fetch("http://localhost:3000/score",{
+    fetch(api_base + "/score",{
       method: "POST",
       headers: {"Content-Type": "application/json"},
       body: JSON.stringify({token: token})
@@ -160,7 +160,7 @@ export default class GameContainer extends Component {
                 "definition": this.state.definition}
     }
     
-    fetch("http://localhost:3000/games", {
+    fetch(api_base + "/games", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"

@@ -25,7 +25,7 @@ class LoggedInHeader extends Component {
                     </Header>
 
                     <Header as='h3' floated='right'>
-                        <a href="/" style={{ color: '#f00' }} className="item" onClick={this.props.logout}>Logout </a> 
+                        <a href="#" style={{ color: '#f00' }} className="item" onClick={this.props.logout}>Logout </a> 
                     </Header>
                 </Segment>    
             </div>

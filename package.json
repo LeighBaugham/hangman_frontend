@@ -2,8 +2,10 @@
   "name": "hangman_frontend",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://dcsim0n.github.io/hangman_frontend",
   "dependencies": {
     "axios": "^0.18.0",
+    "gh-pages": "^2.0.1",
     "indicative": "^5.0.8",
     "material-ui": "^0.20.2",
     "react": "^16.8.6",
@@ -20,7 +22,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "deploy": "./node_modules/.bin/gh-pages -d build"
   },
   "eslintConfig": {
     "extends": "react-app"
